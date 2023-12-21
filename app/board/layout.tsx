@@ -14,12 +14,11 @@ export default function BoardLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body>
+      <div>
         <Header />
         <Navbar/>
         {children}
-        </body>
-    </html>
+      </div>
+   
   )
 }

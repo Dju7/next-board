@@ -11,7 +11,7 @@ export default function Todo() {
   const [items, setItems] = useState<TodoItem[]>([]);
 
   useEffect(() => {
-    const storedTask: TodoItem[] = Object.entries(localStorage).map(
+    const storedTask: TodoItem[] = Object.entries(sessionStorage).map(
       ([id, value]) => ({ id: parseInt(id), value: value as string })
     );
     setItems(storedTask);
@@ -27,14 +27,14 @@ export default function Todo() {
       value: newItem,
     };
     setItems((prevItems) => [...prevItems, newTask]); 
-    window.localStorage.setItem(newTask.id.toString(), newTask.value);
+    sessionStorage.setItem(newTask.id.toString(), newTask.value);
     setNewItem(""); 
   }
 
   const deleteItem = (id: number) => {
     const newArray = items.filter((item) => item.id !== id);
     setItems(newArray);
-    window.localStorage.removeItem(id.toString());
+    sessionStorage.removeItem(id.toString());
   };
 
 
