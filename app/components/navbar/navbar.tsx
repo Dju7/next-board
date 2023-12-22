@@ -32,10 +32,10 @@ export default function Navbar() {
       
         <nav className=' flex flex-col gap-10 items-center '>
          <Link href="/board" className='text-2xl text-secondary' onMouseEnter={()=>{mouseOn('accueil')}} onMouseLeave={mouseOut}><PiChalkboardFill/></Link>
-         <Link href="/board" className='text-2xl text-secondary' onMouseEnter={()=>{mouseOn('cuisine')}} onMouseLeave={mouseOut}><FaKitchenSet/></Link>
+         <Link href="/board/kitchen" className='text-2xl text-secondary' onMouseEnter={()=>{mouseOn('cuisine')}} onMouseLeave={mouseOut}><FaKitchenSet/></Link>
          <Link href="/board/movie" className='text-2xl text-secondary' onMouseEnter={()=>{mouseOn('film')}} onMouseLeave={mouseOut}><RiMovie2Fill/></Link>
          <Link href="/board/Todo" className='text-2xl text-secondary' onMouseEnter={()=>{mouseOn('Todo')}} onMouseLeave={mouseOut}><FaCheckSquare/></Link>
-         <Link href="/board" className='text-2xl text-secondary' onMouseEnter={()=>{mouseOn('Jeu')}} onMouseLeave={mouseOut}><RiGameFill/></Link>
+         <Link href="/board/game" className='text-2xl text-secondary' onMouseEnter={()=>{mouseOn('Jeu')}} onMouseLeave={mouseOut}><RiGameFill/></Link>
          <p className='text-secondary text-xl w-16 h-10 px-2 m-6'>{displayPage}</p>
          
         </nav>

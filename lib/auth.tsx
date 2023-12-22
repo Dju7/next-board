@@ -2,10 +2,10 @@ import { NextAuthOptions } from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 import { db } from "./db";
 import { compare } from "bcrypt";
-import { config } from "dotenv";
+import dotenv from "dotenv";
 
 
-config(); 
+dotenv.config(); 
 
 export const authOptions: NextAuthOptions = {
   pages: {

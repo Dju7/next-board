@@ -4,6 +4,7 @@ import React from 'react'
 import Link from 'next/link'
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+import { motion } from 'framer-motion';
 
 export default function Register() {
 
@@ -37,8 +38,11 @@ export default function Register() {
   return (
     <main className='h-screen w-full flex justify-center items-center bg-primary text-white'>
       <div>
-      <form 
+      <motion.form 
       className="p-4 h-[500px] w-[400px] shadow-xl flex flex-col bg-clearBlue justify-center items-center gap-4"
+      initial={{x: 300, opacity: 0}}
+      animate={{x: 0, opacity: 1}}
+      transition={{duration: 1.5, type:"spring"}}
       onSubmit={createUser} method="POST"
       >
         <h2>Create your acount</h2>
@@ -72,7 +76,7 @@ export default function Register() {
             />
         <button type="submit" className="w-full h-10 bg-secondary border border-tertiary mt-4">Connection</button>
         <p className=" mt-2 "> Welcome Onboard </p>
-      </form>
+      </motion.form>
       <Link href="/">connection</Link>
       </div>
     </main>
