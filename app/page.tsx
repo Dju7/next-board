@@ -23,6 +23,7 @@ export default function Home() {
     });
   
     if (result?.ok) { 
+      alert("authentification réussi, vous allez être redirigé vers le Board dans quelques instants")
       router.push('/board');
     } else {
       setError("L'utilisateur n'existe pas. Veuillez vérifier vos informations d'identification.");

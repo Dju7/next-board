@@ -29,7 +29,7 @@ providers: [
       });
       if (!existingUser) {
         throw new Error('No user found')
-    }
+      }
 
       const passwordMatch = await compare (credentials.password, existingUser.password);
 
