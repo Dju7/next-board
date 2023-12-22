@@ -20,7 +20,7 @@ export default async function Header() {
             
           </>
           ) : (
-           <p className='text-secondary text-xl ml-[60%]'>Not logged in</p>
+           <p className='text-secondary text-xl ml-[60%]'>Nobody log</p>
           )}
           <Signout />
           <div className='h-10 w-10 rounded-full bg-secondary  mr-4'/>
