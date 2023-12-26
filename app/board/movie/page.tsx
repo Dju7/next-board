@@ -9,7 +9,7 @@ export default async function Movie() {
  
 
   try {
-    const response = await fetch('https://api.themoviedb.org/3/movie/upcoming?api_key=3d4bb99f3e9d96edb18d9eff6c7c7b79');
+    const response = await fetch('https://api.themoviedb.org/3/movie/upcoming?api_key=3d4bb99f3e9d96edb18d9eff6c7c7b79', { cache: 'no-store' });
      data = await response.json();
      const movies = data.results
 
@@ -21,7 +21,7 @@ export default async function Movie() {
         <h2>Upcoming Movies</h2>
     </div>
     <div className="flex w-full gap-16 mt-10">
-    <section className="w-[40%] h-[75%] ml-28 ">
+    <section className="w-[40%] h-[75%] ml-28 border border-secondary rounded-xl p-4">
     <Search />
     </section>
      <section className="w-[50%] h-[75%] grid grid-cols-6 py-4 gap-2 px-4 overflow-auto">

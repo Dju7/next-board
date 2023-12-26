@@ -26,7 +26,7 @@ export default function Search() {
 
   return (
     <div className="flex flex-col items-center">
-      <label htmlFor="movier-search" className='text-white mb-2'>Chercher un film</label>
+      <label htmlFor="movier-search" className='text-secondary mb-2 text-xl'>LOOKING FOR A MOVIE</label>
       <input
         type="search"
         className="text-black w-72 mb-2"
@@ -35,7 +35,7 @@ export default function Search() {
       />
       <button
         onClick={handleSearch}
-        className="bg-white border border-white text-black mt-2 w-16 hover:bg-black hover:text-white"
+        className="bg-secondary text-white mt-2 w-20 h-8 rounded-xl hover:text-tertiary"
       >
         Search
       </button>

@@ -40,8 +40,8 @@ export default function Todo() {
 
   return (
     <main className='w-full h-screen flex justify-center items-center'>
-      <section className='w-[80%] h-[80%] bg-clearBlue shadow-xl rounded-xl'>
-        <div className='w-[90%] h-36 flex flex-col justify-center items-center gap-2 mt-4'>
+      <section className='w-[80%] h-[80%] bg-clearBlue shadow-2xl rounded-xl'>
+        <div className='w-[90%] h-36 flex flex-col justify-center items-center gap-2 mt-4 ml-10'>
           <h2 className='text-white text-4xl'> Todo-list</h2>
           <input 
           type="text" 
@@ -55,7 +55,7 @@ export default function Todo() {
           onClick={() => addItem()}
           >Add Task</button>
         </div>
-        <div className='flex flex-col justify-center items-center h-auto w-[90%] mt-6'>
+        <div className='flex flex-col justify-center items-center h-auto w-[90%] mt-6 ml-4'>
         <ul className="mt-14 text-white">
           {items.map((item) => (
             <li key={item.id} className=' w-[700px] p-2 flex justify-between bg-primary shadow-xl mt-2 rounded-xl'>
