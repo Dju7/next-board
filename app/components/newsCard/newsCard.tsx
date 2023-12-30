@@ -1,29 +1,31 @@
 import React from 'react'
 import Image from 'next/image'
 
+
 interface NewsProps {
-    img: string | null,
+  img: string | null,
     title: string,
     source: string,
     description: string,
     url: string,
     author: string | null,
-    key: string | number
 }
 
-const NewsCard: React.FC<NewsProps> = ({ key, img, title, source, description, url, author }) => {
+const NewsCard: React.FC<NewsProps> = ({ title, img, source, description, url, author }) => {
     return (
-      <div className='h-[150px] w-[95%] flex gap-2 rounded-xl border p-1'>
-        <div className='h-[90%] w-[40%] flex flex-col items-center'>
-          <h3 className='text-xl'>{source}</h3>
-          {img && <Image alt='pictures of article' src={img} height={100} width={150} />}
+      <a href={url}>
+      <div className='h-[300px] w-[450px] flex gap-6  p-4 overflow-scroll mb-4 border-t hover:bg-lightBlue'>
+        <div className='h-[90%] w-[30%] flex flex-col overflow-hidden'>
+          <h3 className='text-xl'>{source}</h3> 
+          {img && <Image alt='pictures of article' src={img} height={80} width={100} />}
         </div>
-        <div className='h-full w-[60%] flex flex-col items-center'>
-            <h3 className='text-xl'>{title}</h3>
-            <p className='truncate'>{description}</p>
-            <p className='text-center'>{author}</p>
+        <div className='h-full w-[90%] flex flex-col justify-between'>
+            <h3 className='text-xl mb-2'>{title}</h3>
+            <p className='w-[90%] mb-4'>{description}</p>
+            <p className='text-right'>{author}</p>
         </div>
       </div>
+      </a>
     );
   };
   

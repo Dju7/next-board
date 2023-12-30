@@ -6,25 +6,35 @@ import Calendrier from '../components/calendar/calendar';
 
 
 interface NewsData {
-  author: string | null;
-  title: string;
-  description: string;
-  url: string;
-  source: string;
-  image: string | null;
-  category: string;
-  language: string;
-  country: string;
-  published_at: string;
+  pagination: {
+    limit: number;
+    offset: number;
+    count: number;
+    total: number;
+  };
+  data: Array<{
+    author: string | null;
+    image: string | null;
+    title: string;
+    description: string;
+    url: string;
+    source: string;
+    category: string;
+    language: string;
+    country: string;
+    published_at: string;
+  }>;
 }
 
 export default async function page() {
   const session = await getServerSession(authOptions)
 
-  let data: NewsData[] = [];
+  let NewsData: NewsData | null = null;
   try {
-    const response = await fetch('http://api.mediastack.com/v1/news?access_key=17ffc6276a1943811729f130a5782b41&country=fr&limit=2');
-     data = await response.json();
+    const response = await fetch('http://api.mediastack.com/v1/news?access_key=17ffc6276a1943811729f130a5782b41&countries=fr&sources=lepoint&limit=6');
+     NewsData = await response.json();
+     console.log(NewsData)
+     
      
   
 
@@ -45,10 +55,11 @@ export default async function page() {
           </div>
 
         </section>
-        <section className=' p-6 h-auto w-[50%] bg-white/20 overflow-scroll rounded-2xl'>
-        
-        {Array.isArray(data)  ? (
-           data.map((news) => (
+        <section className=' p-6 h-auto w-[50%] bg-white overflow-scroll flex flex-col gap-6 rounded-2xl'>
+          <h3 className='text-center text-4xl mb-6'>Daily News</h3>
+          <div className='ml-4 grid grid-cols-2'>
+          {Array.isArray(NewsData?.data)  ? (
+           NewsData.data.map((news) => (
       
           <NewsCard 
             key={news.published_at}
@@ -64,6 +75,7 @@ export default async function page() {
             ) : (
               <p>Les données ne sont pas au format de tableau.</p>
             )}
+          </div>
         </section>
       
       </div>
