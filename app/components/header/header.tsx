@@ -11,7 +11,7 @@ export default async function Header() {
         <div className='w-[90%] h-full flex justify-end items-center mr-4'>
               <Signout />
         </div>
-          <div className='h-10 w-10 rounded-full bg-secondary m-2'/> 
+          <div className='h-10 w-10 rounded-full bg-secondary m-2 mr-4'/> 
     </header>
   )
 }
